@@ -11,8 +11,8 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/getresults', methods=['POST', 'GET'])
-def get_results():
+@app.route('/getdelay', methods=['POST', 'GET'])
+def get_delay():
     if request.method == 'POST':
 
         x1 = request.form['x1']
