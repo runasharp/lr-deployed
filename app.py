@@ -11,15 +11,9 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/getdelay', methods=['POST', 'GET'])
-def get_delay():
+@app.route('/getresults', methods=['POST', 'GET'])
+def get_results():
     if request.method == 'POST':
-        # result = request.form
-        # origin = result['origin']
-        # dest = result['dest']
-        # unique_carrier = result['unique_carrier']
-        # day_of_week = result['day_of_week']
-        # dep_hour = result['dep_hour']
 
         x1 = request.form['x1']
         x2 = request.form['x2']

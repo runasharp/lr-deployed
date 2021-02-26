@@ -54,6 +54,5 @@ print("R2 score =", round(sm.r2_score(Y_test, Y_pred), 2))
 
 # print("Predicted value", prediction)
 
-
 with open('regr.pkl', 'wb') as fid:
     pickle.dump(regr, fid, 2)
