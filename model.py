@@ -25,15 +25,16 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
 regr = LinearRegression(normalize=True)  # creates object for the class
 clf = regr.fit(X_train, Y_train)  # performs linear regression
 Y_pred = regr.predict(X_test)  # makes predict
-print('Array with predictions', Y_pred)
+print('This is it', Y_pred)
 
-# The coefficients & intercept
-# print('Slope coefficients: \n', regr.coef_)
-# print('Intercept: \n', regr.intercept_)
+# The coefficients
+print('Slope coefficients: \n', regr.coef_)
+
+print('Intercept: \n', regr.intercept_)
 # The mean squared error
 # The coefficient of determination: 1 is perfect prediction
-# print('Coefficient of determination: %.2f\n'
-#       % r2_score(Y_test, Y_pred))
+print('Coefficient of determination: %.2f\n'
+      % r2_score(Y_test, Y_pred))
 
 print("Mean absolute error =", round(sm.mean_absolute_error(Y_test, Y_pred), 2))
 print("Median absolute error =", round(sm.median_absolute_error(Y_test, Y_pred), 2))
