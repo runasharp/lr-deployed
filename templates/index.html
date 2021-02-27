@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html>
-<title>Linear Regression</title>
+<head>
+    <title>Multiple Linear Regression</title>
+
+    <style>
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+
 <body>
 
 <form action = "/getresults" method="POST">
+
 {#	<p> Complex age:<input name="x1" type ="text" value="42" /> </p>#}
 {#	<p> Total rooms: <input name="x2" type ="text" value="2555" /> </p>#}
-{#    <p> Total bedrooms: <input name="x3" type ="text" value="595" /> </p>#}
+{#  <p> Total bedrooms: <input name="x3" type ="text" value="595" /> </p>#}
 {#	<p> Complex inhabitants:<input name="x4" type ="text" value="665" /> </p>#}
 {#	<p> Nr of apartments: <input name="x5" type ="text" value="1206" /> </p>#}
-
+    <div class="row">
+      <div class="column">
         <p> Complex age: <input name = "x1" type="range" min="1" max="52" value="42" class="slider" oninput="this.form.x1_inp.value=this.value" />
             <input type="number" name="x1_inp" min="1" max="52" value="42" oninput="this.form.x1.value=this.value" /></p>
-
-
 
         <p> Total rooms: <input name = "x2" type="range" min="2" max="39320" value="2555" class="slider" oninput="this.form.x2_inp.value=this.value" />
             <input type="number" name="x2_inp" min="2" max="39320" value="2555" oninput="this.form.x2.value=this.value" /></p>
 
-
-
         <p> Total bedrooms: <input name = "x3" type="range" min="1" max="6445" value="595" class="slider" oninput="this.form.x3_inp.value=this.value" />
             <input type="number" name="x3_inp" min="1" max="6445" value="595" oninput="this.form.x3.value=this.value" /></p>
-
-
 
         <p> Complex inhabitants: <input name = "x4" type="range" min="3" max="35682" value="665" class="slider" oninput="this.form.x4_inp.value=this.value" />
             <input type="number" name="x4_inp" min="3" max="35682" value="665" oninput="this.form.x4.value=this.value" /></p>
 
-
-
         <p> Nr of apartments: <input name = "x5" type="range" min="1" max="6082" value="1206" class="slider" oninput="this.form.x5_inp.value=this.value" />
             <input type="number" name="x5_inp" min="1" max="6082" value="1206" oninput="this.form.x5.value=this.value" /></p>
 
-	<p> <input type ="submit" value="submit" /> </p>
+          <p> <input type ="submit" value="submit" /> </p>
+      </div>
+      <div class="column">
+
+        <h3> Prediction: {{ prediction }} </h3>
+        <h4> Mean absolute error: {{ meanabs }} </h4>
+        <h4> Median absolute error: {{ medabs }} </h4>
+        <h4> R2 score: {{ r2 }} </h4>
+      </div>
+    </div>
 
 </form>
 </body>
