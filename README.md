@@ -16,4 +16,4 @@ Project is created with:
 * Flask
 
 ## Setup
-To run this project, run 'main.py'. 
+To run this project, run 'app.py'. 
