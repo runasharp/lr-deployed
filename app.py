@@ -8,10 +8,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
-@app.route('/getdelay', methods=['POST', 'GET'])
+@app.route('/getresults', methods=['POST', 'GET'])
 def get_delay():
     if request.method == 'POST':
 
@@ -30,5 +30,6 @@ def get_delay():
 
 
 if __name__ == '__main__':
+    # exec(open('model.py').read())
     app.debug = True
     app.run()
