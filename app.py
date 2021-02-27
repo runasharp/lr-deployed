@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import pickle
+import model as md
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 
@@ -26,7 +27,11 @@ def get_delay():
         pkl_file = open('regr.pkl', 'rb')
         regr = pickle.load(pkl_file)
         prediction = int(regr.predict(inputs))
-        return render_template('result.html', prediction=prediction)
+        mae = round(md.sm.mean_absolute_error(md.Y_test, md.Y_pred), 2)
+        m2ae = round(md.sm.median_absolute_error(md.Y_test, md.Y_pred), 2)
+        r2 = round(md.sm.r2_score(md.Y_test, md.Y_pred), 2)
+        return render_template('result.html', prediction=prediction, mae=mae, m2ae=m2ae, r2=r2,
+                               x1=x1, x2=x2, x3=x3, x4=x4, x5=x5)
 
 
 if __name__ == '__main__':
