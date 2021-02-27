@@ -30,8 +30,7 @@ def get_delay():
         mae = round(md.sm.mean_absolute_error(md.Y_test, md.Y_pred), 2)
         m2ae = round(md.sm.median_absolute_error(md.Y_test, md.Y_pred), 2)
         r2 = round(md.sm.r2_score(md.Y_test, md.Y_pred), 2)
-        return render_template('result.html', prediction=prediction, mae=mae, m2ae=m2ae, r2=r2,
-                               x1=x1, x2=x2, x3=x3, x4=x4, x5=x5)
+        return render_template('result.html', prediction=prediction, mae=mae, m2ae=m2ae, r2=r2)
 
 
 if __name__ == '__main__':
