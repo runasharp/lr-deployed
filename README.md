@@ -16,4 +16,4 @@ Project is created with:
 * Flask
 
 ## Setup
-To run this project, run 'app.py'. 
+To run this project, either run 'app.py' or go to https://mlinreg.herokuapp.com
