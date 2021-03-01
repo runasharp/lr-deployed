@@ -14,6 +14,7 @@ Project is created with:
 * Scikit-learn
 * Heroku
 * Flask
+* easy
 
 ## Setup
 To run this project, either run 'app.py' or go to https://mlinreg.herokuapp.com
